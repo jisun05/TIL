@@ -1,1 +1,10 @@
+Software Architecture & Design Patterns in Java
+
+##SOLID Princilpes
+1.single responsibility principle
+2.open-closed principle
+3.Liskov substitution principle
+4.interface segregation principle
+5.dependency inversion
+
 
