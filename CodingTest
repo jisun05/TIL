@@ -1,1 +1,30 @@
+# 📝 Problem Log1
 
+## 📌 Problem Name
+- [167. Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
+
+## 🗂 Category / Type
+- Two Pointers
+
+## 🔍 My Initial Approach
+- Moving the pointers based solely on whether `numbers[left]` is less than or greater than `numbers[right]`
+- I was focusing on comparing individual values instead of their sum
+
+## ❌ What Went Wrong / Why It Failed
+- Mistakenly moved pointers based on value comparison instead of comparing the sum to the target
+- This led to incorrect pointer movement and missed the correct answer
+
+## ✅ Final Solution Summary
+- Used two pointers starting from both ends of the array
+- Compared the sum of `numbers[left] + numbers[right]` to the target:
+  - If sum == target → return the indices
+  - If sum < target → move left pointer
+  - If sum > target → move right pointer
+- Took advantage of the array being sorted to efficiently find the pair in O(n) time
+
+## 🧠 Key Takeaways / What I Learned
+- Always base pointer movement on the actual goal of the problem — in this case, the "sum", not the individual values
+- Recognized that the sorted nature of the array allows for a two-pointer strategy
+
+## 💬 Additional Thoughts / Retrospective
+- From my perspective, using a nested for loop seemed more readable when the input array size is relatively small.
