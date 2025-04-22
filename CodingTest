@@ -1,20 +1,20 @@
-# 📝 Problem Log1
+📝 Problem Log1
 
-## 📌 Problem Name
+📌 Problem Name
 - 167. Two Sum II - Input Array Is Sorted(https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
 
-## 🗂 Category / Type
+🗂 Category / Type
 - Two Pointers
 
-## 🔍 My Initial Approach
+🔍 My Initial Approach
 - Moving the pointers based solely on whether `numbers[left]` is less than or greater than `numbers[right]`
 - I was focusing on comparing individual values instead of their sum
 
-## ❌ What Went Wrong / Why It Failed
+❌ What Went Wrong / Why It Failed
 - Mistakenly moved pointers based on value comparison instead of comparing the sum to the target
 - This led to incorrect pointer movement and missed the correct answer
 
-## ✅ Final Solution Summary
+✅ Final Solution Summary
 - Used two pointers starting from both ends of the array
 - Compared the sum of `numbers[left] + numbers[right]` to the target:
   - If sum == target → return the indices
@@ -22,9 +22,38 @@
   - If sum > target → move right pointer
 - Took advantage of the array being sorted to efficiently find the pair in O(n) time
 
-## 🧠 Key Takeaways / What I Learned
+🧠 Key Takeaways / What I Learned
 - Always base pointer movement on the actual goal of the problem — in this case, the "sum", not the individual values
 - Recognized that the sorted nature of the array allows for a two-pointer strategy
 
-## 💬 Additional Thoughts / Retrospective
+💬 Additional Thoughts / Retrospective
 - From my perspective, using a nested for loop seemed more readable when the input array size is relatively small.
+
+
+📌 Problem Name
+-125. Valid Palindrome
+
+🗂 Category / Type
+-Two Pointers / String Manipulation
+
+🔍 My Initial Approach
+-Used two pointers to compare characters from both ends of the string
+
+-Initially handled all logic using only if statements without else if, which caused conditions to overlap and logic to break
+
+-Didn't properly skip non-alphanumeric characters before comparison, which led to incorrect results
+
+❌ What Went Wrong / Why It Failed
+-All conditions were handled with if blocks, so the control flow wasn’t clear and failed in certain edge cases
+
+-I was checking and comparing characters even when they weren’t valid (i.e., not letters or digits)
+
+-This resulted in errors when comparing invalid characters, even though they should’ve been skipped
+
+✅ Final Solution Summary
+-Used two pointers, one from the start and one from the end of the string
+
+Skipped non-alphanumeric characters using <<<<Character.isLetterOrDigit>>>>>
+Compared characters after converting them to lowercase       
+
+
