@@ -61,7 +61,12 @@
 -Character.toLowerCase(s.charAt(first)) 
 -Character.isLetterOrDigit(s.charAt(end))
 
+**[2025-04-22 Review]**  
+- Encountered a compilation error due to using `Char` instead of `Character`.  
+- Incorrectly used `s.char(first)` instead of `s.charAt(first)`, resulting in a method not found error.
+
 💬 Additional Thoughts / Retrospective
 - In the future, I’d like to improve the efficiency by returning false as soon as a mismatch is found, instead of continuing unnecessary checks
-    
+
+
 
