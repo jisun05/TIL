@@ -53,7 +53,15 @@
 ✅ Final Solution Summary
 -Used two pointers, one from the start and one from the end of the string
 
-Skipped non-alphanumeric characters using <<<<Character.isLetterOrDigit>>>>>
-Compared characters after converting them to lowercase       
+-Skipped non-alphanumeric characters using <<<<Character.isLetterOrDigit>>>>>
+-Compared characters after converting them to lowercase       
 
+🧠 Key Takeaways / What I Learned
+-It's important to return early (return false) when the failure condition is clear — this improves both readability and efficiency
+-Character.toLowerCase(s.charAt(first)) 
+-Character.isLetterOrDigit(s.charAt(end))
+
+💬 Additional Thoughts / Retrospective
+- In the future, I’d like to improve the efficiency by returning false as soon as a mismatch is found, instead of continuing unnecessary checks
+    
 
