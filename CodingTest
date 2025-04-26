@@ -65,6 +65,11 @@
 - Encountered a compilation error due to using `Char` instead of `Character`.  
 - Incorrectly used `s.char(first)` instead of `s.charAt(first)`, resulting in a method not found error.
 
+
+**[2025-04-26 Review]**
+-Incorrectly used code instead of int last = s.length() - 1, causing a "method not found" error.
+-Forgot to use Character.isLetterOrDigit.
+
 💬 Additional Thoughts / Retrospective
 - In the future, I’d like to improve the efficiency by returning false as soon as a mismatch is found, instead of continuing unnecessary checks
 
