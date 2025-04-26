@@ -1,0 +1,29 @@
+📌 Problem Name
+27. Remove Element
+
+🗂 Category / Type
+Two Pointers / Array Manipulation
+
+🔍 My Initial Approach
+Used two pointers: one (i) to iterate through the array and another (k) to track the position to store valid elements.
+Compared each element with the given val and only moved elements that were not equal to val.
+Incremented the k pointer whenever a valid element was found and placed it at the front.
+
+❌ What Went Wrong / Why It Failed
+The code did not explicitly handle the case when the input array is empty.
+Although the current loop naturally skips execution when the array is empty, explicitly checking for it (if (nums.length == 0) return 0;) could make the code more robust and complete.
+The variable name k could be made more descriptive (such as writeIndex) to improve readability and immediately convey its purpose to other readers.
+
+✅ Final Solution Summary
+Iterated through the array with a for-loop while checking if each element is not equal to val.
+If a valid element is found, placed it at the current k position and incremented k.
+Successfully modified the array in-place without using extra space and returned k as the new length.
+
+🧠 Key Takeaways / What I Learned
+In in-place modification problems, it's important to clearly separate the "read" and "write" operations using two pointers.
+Always ensure the write pointer only moves when a valid condition is met.
+Handling overwriting carefully is crucial, especially when modifying the same array.
+
+💬 Additional Thoughts / Retrospective
+In future in-place problems, I’ll focus on managing pointers properly and ensuring that no data is accidentally lost.
+I also learned that it’s better to keep the code simple and clean when the operation is straightforward, as in this case.
