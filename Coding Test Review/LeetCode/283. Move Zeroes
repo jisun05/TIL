@@ -1,0 +1,30 @@
+📌 Problem Name
+283. Move Zeroes
+
+🗂 Category / Type
+-Two Pointers / Array Manipulation
+
+🔍 My Initial Approach
+-Used a single pointer to swap adjacent elements when encountering a 0.
+-Intended to push 0s to the end by swapping with the next element.
+-Thought that swapping once would be enough to move zeros to the back.
+
+❌ What Went Wrong / Why It Failed
+-Swapping adjacent elements only moves zeros one step, not fully to the end.
+-Multiple zeros or zeros deeper in the array are not correctly handled.
+As a result, some zeros remained stuck in the middle instead of being moved to the end.
+
+✅ Final Solution Summary
+-Used two pointers: one (save) to track the position to place the next non-zero number, and another to iterate through the array.
+-First pass: Shift all non-zero elements forward.
+-Second pass: Fill the remaining elements with zeros.
+-Ensured the movement is in-place without using extra space except for a simple counter.
+
+🧠 Key Takeaways / What I Learned
+-Simply swapping adjacent elements isn't enough for problems requiring full relocation.
+-In "move and fill" patterns, it's often better to first compact useful elements, then handle leftovers.
+-Always validate if the chosen strategy fully satisfies the problem (especially edge cases with multiple zeros).
+
+💬 Additional Thoughts / Retrospective
+-In future array manipulation problems, I’ll check whether simple swaps are sufficient, or if a more structured two-pass method is needed.
+Also, I'll be more cautious about assuming one movement fixes the whole array; full simulation and testing are important.
