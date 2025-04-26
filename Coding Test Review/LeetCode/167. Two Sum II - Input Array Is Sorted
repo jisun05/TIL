@@ -24,5 +24,12 @@
 - Always base pointer movement on the actual goal of the problem — in this case, the "sum", not the individual values
 - Recognized that the sorted nature of the array allows for a two-pointer strategy
 
+**[2025-04-26 Review]**
+-Instead of creating a result array beforehand and modifying it inside the loop, it's cleaner and more efficient to directly create and return a new array when the solution is found.
+This approach improves code readability, reduces unnecessary variable declarations, and better aligns with modern clean coding practices.
+
+-I learned that returning new int[]{-1, -1} is much better because it clearly indicates failure in a way that is easy to understand. 
+It avoids confusion compared to returning an empty array, and it makes the code more readable and easier to debug
+
 💬 Additional Thoughts / Retrospective
 - From my perspective, using a nested for loop seemed more readable when the input array size is relatively small.
