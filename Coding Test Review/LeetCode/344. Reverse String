@@ -1,0 +1,38 @@
+📌 Problem Name
+-344. Reverse String
+
+🗂 Category / Type
+-Two Pointers / String Manipulation
+
+🔍 My Initial Approach
+-Used two pointers to swap characters from both ends of the array.
+
+-Initially, mistakenly used s.charAt(i) instead of s[i], since s is a char[], not a String.
+
+-Also accidentally created an unnecessary result array, which was unused.
+
+❌ What Went Wrong / Why It Failed
+-Tried to use charAt() on a char[] array, which caused a compilation error.
+
+-Forgot that array indices start from 0 to length - 1, leading to incorrect indexing.
+
+-Created a redundant result array that was not required for in-place reversal.
+
+✅ Final Solution Summary
+-Used two pointers: one starting from the beginning and one from the end.
+
+-Swapped characters at left and right indices until the two pointers met.
+
+-Ensured no extra memory was used beyond a single temporary variable for swapping.      
+
+🧠 Key Takeaways / What I Learned
+-Arrays (char[]) are accessed with s[i], not s.charAt(i).
+
+-Always double-check index boundaries in array operations.
+
+-Unnecessary memory allocation should be avoided when the task requires in-place modification
+
+💬 Additional Thoughts / Retrospective
+- In the future, I will pay more attention to data types (char[] vs String) and avoid unnecessary memory usage.
+
+Also, when solving two-pointer problems, I’ll focus more on making sure the pointers move correctly and meet the right conditions to avoid off-by-one errors.
