@@ -1,0 +1,29 @@
+📌 Problem Name
+26. Remove Duplicates from Sorted Array
+
+🗂 Category / Type
+Two Pointers / Array Manipulation
+
+🔍 My Initial Approach
+Used two pointers: one for reading (i) and one for writing (k).
+Compared each element to the previous one (nums[i] != nums[i-1]) to find unique elements.
+Wrote the unique elements forward in the array and incremented the write pointer.
+
+❌ What Went Wrong / Why It Failed
+Initially missed checking for empty arrays, which could lead to runtime errors.
+Didn't combine the assignment and pointer increment into a single concise line (nums[k++] = nums[i];), leading to slightly longer and less clean code.
+Focused only on functionality without optimizing for edge cases and best practices.
+
+✅ Final Solution Summary
+Added a check for an empty array at the start to handle edge cases safely.
+Simplified the code by using post-increment (k++) during assignment for better readability.
+Ensured all unique elements were moved forward properly, while maintaining O(1) space usage.
+
+🧠 Key Takeaways / What I Learned
+Always validate inputs, especially for arrays, to avoid unexpected errors.
+concise expressions like nums[k++] = nums[i]; improves both clarity and efficiency.
+Two pointers are a powerful technique for in-place array modification problems.
+
+💬 Additional Thoughts / Retrospective
+In the future, I’ll focus on not only solving the problem correctly but also writing safer and cleaner code.
+Paying attention to edge cases like empty inputs and applying small optimizations can significantly improve code quality and reliability, especially in interviews.
