@@ -1,0 +1,34 @@
+📌 Problem Name
+977. Squares of a Sorted Array
+
+🗂 Category / Type
+Two Pointers / Array Manipulation
+
+🔍 My Initial Approach
+Created a new result array with the same length as nums.
+Initialized two pointers, left at the beginning and right at the end of the array (actually set as nums.length).
+Calculated the squares of the elements at the left and (right - 1) positions inside the loop.
+Stored the larger squared value into the result array, placing it from the end (using nums.length - 1 - index), and moved the corresponding pointer inward.
+Incremented the index after each placement.
+
+❌ What Went Wrong / Why It Failed
+Initially, I incorrectly set right = nums.length instead of right = nums.length - 1, leading to some confusion when calculating rightSquares with nums[right - 1].
+This approach worked, but it added slight complexity by always adjusting right with -1 inside the loop.
+Also, starting index = 0 and computing positions backward (nums.length - 1 - index) made the code less intuitive compared to starting index directly from the end and decrementing.
+
+✅ Final Solution Summary
+Used two pointers: left starting from the beginning and right logically starting from the last valid index (handled by adjusting right-1 during square calculation).
+At each iteration, compared the squared values of nums[left] and nums[right-1], inserted the larger one at the correct reverse position in result.
+Moved the pointer that had the larger square, and advanced the insertion index.
+Handled filling the result array completely by moving from the end toward the beginning.
+
+🧠 Key Takeaways / What I Learned
+Pointer initialization is critical: setting right = nums.length requires extra adjustments like subtracting 1, making the code slightly less clean.
+When filling an array from back to front, it can be simpler to initialize the result index at the last position and decrement it, rather than computing nums.length - 1 - index.
+Squaring negative numbers can result in larger values than positive numbers, so comparing squares carefully is essential.
+Clear pointer movement and correct index calculation make two-pointer algorithms much easier to debug and reason about.
+
+💬 Additional Thoughts / Retrospective
+Next time, I will pay more attention to initial pointer values to make my code cleaner and avoid unnecessary adjustments.
+Starting the result array fill from the back by decrementing a pointer directly can make the algorithm more readable and less error-prone.
+Working carefully through index calculations prevents off-by-one errors, which are common when manipulating array boundaries.
