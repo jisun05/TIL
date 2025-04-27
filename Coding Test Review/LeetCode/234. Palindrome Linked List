@@ -1,0 +1,32 @@
+📌 Problem Name
+234. Palindrome Linked List
+
+🗂 Category / Type
+Two Pointers / Linked List
+
+🔍 My Initial Approach
+Traversed the LinkedList and copied all values into an ArrayList.
+Used two pointers (left and right) to compare elements from both ends moving toward the center.
+Initially got confused between fields and methods, thinking current.val might be a method rather than a simple field.
+Also mistakenly tried to use .length instead of .size() for the ArrayList.
+
+❌ What Went Wrong / Why It Failed
+Used .length on an ArrayList, which caused a compilation error; should have used .size() instead.
+Misunderstood that current.val is not a method but a field storing the node’s value.
+Didn't fully understand at first why copying the LinkedList into an ArrayList was necessary (for efficient index access).
+
+✅ Final Solution Summary
+Copied all node values from the LinkedList into an ArrayList called vals.
+Used two pointers to check if values at left and right indices matched while moving inward.
+If all corresponding values matched, returned true; otherwise, returned false.
+Compared values using .equals() method instead of == to correctly compare Integer objects.
+
+🧠 Key Takeaways / What I Learned
+In a LinkedList node, val is a field, not a method—no parentheses needed.
+ArrayLists require .size() to access their length, not .length like arrays.
+Copying a LinkedList into an ArrayList is useful when frequent index-based access is required.
+
+💬 Additional Thoughts / Retrospective
+I need to be more careful about the differences between arrays, lists, and their associated methods.
+I should also think about the characteristics of the data structures before choosing one for the solution.
+For two-pointer problems, I will double-check pointer initialization, movement, and termination conditions to avoid off-by-one mistakes.
