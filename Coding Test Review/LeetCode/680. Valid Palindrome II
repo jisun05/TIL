@@ -1,0 +1,35 @@
+📌 Problem Name
+680. Valid Palindrome II
+
+🗂 Category / Type
+Two Pointers / String Validation
+
+🔍 My Initial Approach
+Used two pointers to check if the string is a palindrome by comparing characters from both ends.
+When a mismatch occurred, checked if deleting either the left character or the right character could still form a valid palindrome by calling a helper function isPalindrome.
+The helper function simply used a while loop to validate the remaining substring without recursion.
+
+❌ What Went Wrong / Why It Failed
+Initially misunderstood how to handle mismatches: incorrectly handled deletion logic or only compared a single character rather than checking the entire substring.
+Also, forgot that after a mismatch, both possibilities (skip left or skip right) must be tried to satisfy "at most one deletion" condition.
+
+✅ Final Solution Summary
+Used two pointers: first starting from the beginning, and last from the end.
+Compared characters; if they matched, moved pointers inward.
+If characters did not match, immediately attempted two cases:
+Check if skipping the left character makes the remaining substring a palindrome.
+Check if skipping the right character makes the remaining substring a palindrome.
+
+Helper function isPalindrome uses a simple while loop to verify palindrome status, ensuring efficient O(N) time complexity.
+
+🧠 Key Takeaways / What I Learned
+For problems allowing "one modification" (like deletion), both branches (left skip, right skip) must be carefully considered.
+A simple while-based helper method is often safer and faster than recursion for long strings.
+Clear pointer movement and consistent boundary checking are essential in two-pointer problems to avoid off-by-one errors.
+***deleting at most one***
+
+💬 Additional Thoughts / Retrospective
+In future problems with similar "at most one modification" conditions, I'll first think about when to branch and how to validate after branching.
+Also, I'll avoid unnecessary recursion unless absolutely needed, and stick with simple loops when performance matters (especially with large inputs).
+
+
