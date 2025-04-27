@@ -1,0 +1,35 @@
+📌 Problem Name
+392. Is Subsequence
+
+🗂 Category / Type
+Two Pointers / String Matching
+
+🔍 My Initial Approach
+Started by using two pointers, one for s and one for t.
+The idea was to traverse t and try to match each character in s sequentially.
+Initially, I incorrectly assumed that mismatches should immediately return false, without giving t enough chance to match all characters from s.
+Also, mistakenly started the left pointer from index 1 instead of 0, skipping the first character of s.
+
+❌ What Went Wrong / Why It Failed
+Misunderstood that in subsequence checking, we shouldn't expect immediate matches; we need to scan t.
+Started traversal from index 1 instead of 0, missing out on the first character comparison.
+Used a wrong loop structure that prematurely returned false upon the first mismatch, rather than continuing to search in t.
+Did not properly manage the termination condition: checking whether all characters in s were matched.
+
+✅ Final Solution Summary
+Used two pointers: one pointing to s and the other to t.
+Incremented both pointers when a match was found; otherwise, only moved the t pointer.
+Returned true only if the pointer for s reached the end, meaning all characters in s were successfully matched in order.
+Handled edge cases like an empty s string separately at the beginning.
+
+🧠 Key Takeaways / What I Learned
+In subsequence problems, you must scan the larger string t thoroughly without rushing to a false conclusion on early mismatches.
+Pointers should always be initialized correctly (typically at index 0) unless specifically needed otherwise.
+Understanding the "subsequence" definition precisely (order matters but not continuity) is critical before starting implementation.
+Edge cases like empty strings should be handled up front to simplify main logic.
+Immediate mismatch does not mean failure; only failure to match the entire s in sequence matters.
+
+💬 Additional Thoughts / Retrospective
+In future sequence matching or pattern matching problems, I will be more patient with traversal and avoid returning early without considering the full search space.
+Also, I will pay closer attention to pointer initialization and boundary conditions to prevent off-by-one errors or skipped characters.
+Carefully separating "continue searching" vs "early exit" situations makes two-pointer logic much cleaner and more robust.
