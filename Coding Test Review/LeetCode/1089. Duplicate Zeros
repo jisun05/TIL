@@ -1,0 +1,35 @@
+📌 Problem Name
+1089. Duplicate Zeros
+
+🗂 Category / Type
+Two Pointers / Array Manipulation
+
+🔍 My Initial Approach
+Attempted to create a new array (result[]) to store the duplicated zeros separately.
+Iterated through the original array and manually inserted an extra zero whenever a 0 was encountered.
+Tried to handle the duplication by incrementing the loop counter when inserting a duplicate, but without carefully managing array bounds.
+
+❌ What Went Wrong / Why It Failed
+Allocated a new array (result[]) instead of modifying the input array arr in-place, violating the problem constraints.
+Failed to handle the case where duplicating a zero would push elements outside the fixed array size.
+The loop used i < arr.length - 1, which skipped checking the last element properly.
+
+✅ Final Solution Summary
+First, counted how many zeros need to be duplicated to understand how much shifting is required.
+Then, processed the array backwards from the end to avoid overwriting elements before copying them.
+When encountering a 0, wrote two zeros if space allowed, ensuring no index out-of-bounds errors.
+Carefully checked if the target index (i + zeros) was still within array bounds before writing.
+
+🧠 Key Takeaways / What I Learned
+In-place modification often requires processing from the end of the array to prevent overwriting unprocessed elements.
+Always check index bounds when duplicating elements, especially when the array size is fixed.
+Counting extra space (like zeros) before modifying can simplify complex shifting problems.
+Be mindful of whether problems allow new arrays or strictly require in-place operations.
+I considered adding boundary checks, but decided not to because I felt it would hurt code readability.
+
+
+💬 Additional Thoughts / Retrospective
+
+In future problems involving duplication, expansion, or shifting, I will first consider working backwards if overwriting is a risk.
+
+Also, will make it a habit to plan out space needs (like counting zeros) before starting modification to avoid mid-loop surprises.
