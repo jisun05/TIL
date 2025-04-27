@@ -1,0 +1,35 @@
+📌 Problem Name
+11. Container With Most Water
+
+🗂 Category / Type
+Two Pointers / Array Manipulation
+
+🔍 My Initial Approach
+Used two pointers: one (left) starting at the beginning and another (right) at the end of the array.
+At each step, calculated the area formed between the two pointers and kept track of the maximum area found.
+Moved the pointer corresponding to the shorter height toward the center to potentially find a larger container.
+
+❌ What Went Wrong / Why It Failed
+Initially thought that when heights are equal (height[left] == height[right]), it’s always best to move both pointers (left++, right--) at the same time.
+However, if we move both without calculating the current area first, it can cause missing the optimal solution because the current state might already be the largest possible area.
+Also realized that we must always calculate the area before any pointer movement, even if the heights are the same.
+Additionally, moving both pointers blindly can occasionally skip important candidates when both sides are "good" walls.
+
+✅ Final Solution Summary
+Calculated the area first using the current left and right pointers.
+Updated the maximum area found.
+Then moved the pointer at the shorter height.
+If heights are equal, moved both pointers (left++ and right--) but only after area calculation.
+This ensures that all potential maximum areas are considered before any pointer movement.
+
+🧠 Key Takeaways / What I Learned
+Always calculate the area first before moving pointers.
+Move the pointer pointing to the shorter wall to maximize the chance of a bigger minimum height later.
+Be cautious when heights are equal; don't skip the current calculation.
+Handling two pointers smartly is crucial in array problems to avoid missing best cases.
+Clear separation between calculation and movement logic makes the code more robust and correct.
+
+💬 Additional Thoughts / Retrospective
+In future two-pointer problems, I’ll make sure that critical evaluations (like area calculation) happen before any pointer movement.
+I'll also avoid assumptions like "both move is always better" and be more careful with conditions that seem symmetrical.
+Maintaining simplicity while not skipping necessary checks is key to solving these problems cleanly and correctly.
