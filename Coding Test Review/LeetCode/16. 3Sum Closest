@@ -1,0 +1,27 @@
+📌 Problem Name
+16. 3Sum Closest
+
+🗂 Category / Type
+Two Pointers / Array Manipulation
+
+❌ What Went Wrong / Why It Failed
+Incorrectly initialized result with 0 instead of a valid sum of three elements.
+Mistakenly treated the second pointer as a value, not an index.
+Wrongly checked duplicates on second instead of first.
+Confused between sum and result when returning the answer.
+Improper immediate return condition by checking result == target instead of sum == target.
+
+🧠 Key Takeaways / What I Learned
+Always initialize result with a valid sum.
+Use indices, not values, for pointers.
+Check duplicates on the fixed first index.
+Return result, not sum, after traversal.
+Directly compare sum == target for immediate return.
+
+🐱 Point
+
+Sort before two-pointers.
+
+Initialize result properly.
+
+Handle pointer movement and duplicate checks carefully.
