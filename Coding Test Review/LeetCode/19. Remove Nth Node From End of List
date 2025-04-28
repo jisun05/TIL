@@ -1,0 +1,24 @@
+📌 Problem Name
+19. Remove Nth Node From End of List
+
+🗂 Category / Type
+Two Pointers / Linked List
+
+❌ What Went Wrong / Why It Failed
+I had no idea what the two pointers should be based on.
+
+🧠 Key Takeaways / What I Learned
+
+Fast pointer: Move n steps ahead first.
+Slow pointer: Start from the head and move one step at a time after fast moves n steps.
+Once the fast pointer reaches the end of the list, the slow pointer will be right before the node to be deleted.
+Simply update slow.next = slow.next.next to remove the target node.
+
+dummy.next returns the starting node of the linked list, not an array.
+Internally, it’s still a chain of ListNode objects.
+LeetCode just displays it as [1, 2, 3] for easier reading.
+
+🐱Point
+1.Create a dummy node, move the fast pointer n steps ahead, then move both fast and slow together. Finally, skip the target node by updating slow.next = slow.next.next.
+2.Move fast pointer n + 1 steps ahead to ensure that slow stops exactly one node before the node to be deleted.
+3.Return dummy.next because the head node itself might be deleted.
