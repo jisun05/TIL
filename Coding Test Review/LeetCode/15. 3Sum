@@ -24,3 +24,8 @@ The 3Sum problem heavily relies on sorting + two pointers + duplicate handling.
 Mastering these three concepts ensures a correct and optimized solution.
 when using a for loop, we must stop at nums.length - 2, because if i reaches nums.length - 1 or later, 
 there would not be enough elements left to form a triplet.
+
+🐱Point
+1.sort
+2.important to carefully set the pointer range
+3.Avoiding duplicates requires clear thinking about possible cases and conditions.
