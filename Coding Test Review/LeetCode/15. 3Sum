@@ -1,0 +1,26 @@
+📌 Problem Name
+15. 3Sum
+
+🗂 Category / Type
+Two Pointers / Array Manipulation
+
+❌ What Went Wrong / Why It Failed
+Correctly declared the result list with List<List<Integer>> result = new ArrayList<>();, 
+but initially missed that sorting the array is essential when using the two-pointer technique.
+Wrote a duplicate-skipping condition to prevent repeated triplets, 
+but incorrectly compared the current number with the next one (nums[i] == nums[i+1]) instead of the previous one (nums[i] == nums[i-1]).
+After finding a valid triplet, while attempting to skip duplicates for first and last pointers, mistakenly used continue statements, 
+which can cause infinite loops, instead of properly incrementing/decrementing the pointers (first++, last--).
+Proper handling of duplicates and pointer movement after adding a valid triplet was missing or misapplied.
+
+🧠 Key Takeaways / What I Learned
+When collecting multiple results, it is standard to declare List<List<Integer>> result = new ArrayList<>();.
+Whenever using the two-pointer technique, sorting the input array is mandatory to make pointer movement logic valid.
+To avoid duplicate triplets, always compare the current number with the previous number (nums[i] == nums[i-1]) when skipping duplicates, 
+not with the next number.
+After finding a triplet or moving pointers, do not use continue inside while loops; instead, 
+directly move pointers (first++ and last--) to correctly skip over duplicate numbers.
+The 3Sum problem heavily relies on sorting + two pointers + duplicate handling. 
+Mastering these three concepts ensures a correct and optimized solution.
+when using a for loop, we must stop at nums.length - 2, because if i reaches nums.length - 1 or later, 
+there would not be enough elements left to form a triplet.
