@@ -1,0 +1,16 @@
+📌 Problem Name
+18. 4Sum
+
+🗂 Category / Type
+Two Pointers / Array Manipulation
+
+❌ What Went Wrong / Why It Failed
+Although I attempted to solve the problem without nested for loops, using two pointers correctly required them for this problem.
+
+🧠 Key Takeaways / What I Learned
+
+
+🐱Point
+1.sort
+2.important to carefully set the pointer range
+3.Avoiding duplicates requires clear thinking about possible cases and conditions.
