@@ -24,6 +24,5 @@ Always validate inputs, especially for arrays, to avoid unexpected errors.
 concise expressions like nums[k++] = nums[i]; improves both clarity and efficiency.
 Two pointers are a powerful technique for in-place array modification problems.
 
-💬 Additional Thoughts / Retrospective
-In the future, I’ll focus on not only solving the problem correctly but also writing safer and cleaner code.
-Paying attention to edge cases like empty inputs and applying small optimizations can significantly improve code quality and reliability, especially in interviews.
+**29/04 review**
+I missed the instruction that the remaining elements of nums and the size don't matter
