@@ -1,0 +1,106 @@
+📓 Two Pointers Pattern Summary
+
+1. Opposite Ends
+Description: Start two pointers from both ends of a sorted array to find a pair or evaluate conditions.
+Examples:
+Two Sum II – Input Array Is Sorted (167)
+Container With Most Water (11)
+3Sum (15), 3Sum Closest (16)
+Boats to Save People (881)
+
+2. Slow & Fast Pointers
+Description: Use one fast and one slow pointer to detect cycles or find the midpoint in linked structures.
+Examples:
+Linked List Cycle I/II (141/142)
+Middle of the Linked List (876)
+Find the Duplicate Number (287)
+
+3. Sliding Window
+Description: Expand and shrink a window over the input to optimize subarray or substring properties.
+Examples:
+Longest Substring Without Repeating Characters (3)
+Minimum Window Substring (76)
+Longest Repeating Character Replacement (424)
+Fruit Into Baskets (904)
+
+4. Partition & Overwrite
+Description: Overwrite valid elements in-place from the front to remove or deduplicate elements.
+Examples:
+Remove Element (27)
+Remove Duplicates from Sorted Array (26)
+Remove Duplicates from Sorted Array II (80)
+Move Zeroes (283)
+
+5. Dutch National Flag
+Description: Classify elements into 3+ categories in a single pass for in-place sorting.
+Examples:
+Sort Colors (75)
+Wiggle Sort II (324)
+
+6. Reverse & Palindrome
+Description: Use two pointers converging inward to reverse structures or check palindromes.
+Examples:
+Reverse String (344)
+Valid Palindrome (125)
+Reverse Words in a String III (557)
+
+7. Merge / Intersection
+Description: Merge or intersect sorted structures in a single traversal.
+Examples:
+Merge Sorted Array (88)
+Merge Two Sorted Lists (21)
+Intersection of Two Arrays II (350)
+
+📃 투 포인터 문제 유형 정보 (한국어)
+1. 양 끝에서 만나는 포인터 (Opposite Ends)
+설명: 정렬된 배열 혹은 “두 수의 합” 같은 문제에서, 배열의 아까지 끝에서 포인터를 시작해가며 조건을 맞춰보는 상황.
+예제:
+Two Sum II – Input Array Is Sorted (167)
+Container With Most Water (11)
+3Sum (15), 3Sum Closest (16)
+Boats to Save People (881)
+
+2. 슬로우-파스트 포인터 (Slow & Fast)
+설명: 하나는 천천히, 하나는 빠른 속도로 이동시키며 “사이클 찾기”, “중간 노드 찾기” 등에 활용.
+예제:
+Linked List Cycle I/II (141/142)
+Middle of the Linked List (876)
+Find the Duplicate Number (287)
+
+3. 가변/고정 슬라이딩 윈두우 (Sliding Window)
+설명: 연속된 구간(윈두우)을 느려내뜨르며 최적의 부분 문자열·부분 배열을 탐색.
+예제:
+Longest Substring Without Repeating Characters (3)
+Minimum Window Substring (76)
+Longest Repeating Character Replacement (424)
+Fruit Into Baskets (904)
+
+4. 파티션 & 덕업쓰기 (Partition & Overwrite)
+설명: 조건에 맞는 원소만 아까지에 덕업쓰기(자리 변경)하여 “제거”하거나 “중복 제거”를 수행.
+예제:
+Remove Element (27)
+Remove Duplicates from Sorted Array (26)
+Remove Duplicates from Sorted Array II (80)
+Move Zeroes (283)
+
+5. 더치 국기 문제 (Dutch National Flag)
+설명: 세 가지(혹은 그 이상)층 카테고리를 한 번의 순회로 분류해 정렬.
+예제:
+
+Sort Colors (75)
+Wiggle Sort II (324)
+
+6. 뒤집기 & 패린드롭 체크 (Reverse & Palindrome)
+설명: 양 끝에서 모여가며 문자열/배열을 뒤집거나 패린드롭 여분을 검사.
+예제:
+Reverse String (344)
+Valid Palindrome (125)
+Reverse Words in a String III (557)
+
+7. 벽하 패턴 (Merge / Intersection)
+설명: 정렬된 두 구조를 “한 번의 순회”로 벽합하거나 교집합 계산.
+예제:
+Merge Sorted Array (88)
+Merge Two Sorted Lists (21)
+Intersection of Two Arrays II (350)
+
