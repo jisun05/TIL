@@ -29,6 +29,9 @@ Be cautious when heights are equal; don't skip the current calculation.
 Handling two pointers smartly is crucial in array problems to avoid missing best cases.
 Clear separation between calculation and movement logic makes the code more robust and correct.
 
+**[2025-05-02 Review]**
+Meaningful variable names matter.
+
 💬 Additional Thoughts / Retrospective
 In future two-pointer problems, I’ll make sure that critical evaluations (like area calculation) happen before any pointer movement.
 I'll also avoid assumptions like "both move is always better" and be more careful with conditions that seem symmetrical.
