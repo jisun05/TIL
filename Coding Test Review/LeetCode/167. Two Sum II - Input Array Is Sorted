@@ -43,8 +43,11 @@ Only two pointers (first, last) are used, along with a result array of size 2.
 Since no additional space grows with input size, the space complexity is constant.
 
 
-
-
+**[2025-05-02 Review]**
+why the condition 'while (first < last)' ?
+=> It is used because we are using the two-pointer approach on a sorted array.
+The loop continues as long as two pointers haven't crossed each other. Once first is no longer less thann last, all posiible pairs have been checked,
+and there's no need to continue.
 
 
 
