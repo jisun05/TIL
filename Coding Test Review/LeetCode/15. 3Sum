@@ -25,6 +25,20 @@ Mastering these three concepts ensures a correct and optimized solution.
 when using a for loop, we must stop at nums.length - 2, because if i reaches nums.length - 1 or later, 
 there would not be enough elements left to form a triplet.
 
+**[2025-05-03 Review]**
+No duplicate-triplet filtering
+You need to skip over the same values for your first, second and last pointers so you don’t add the same three numbers more than once.
+Incorrect declaration of your 2D list.
+
+List<List<Integer>> result = new ArrayList<>();
+
+Wrong add() call
+
+// Incorrect:
+result.add(nums[first], nums[second], nums[last]);
+// Correct:
+result.add(Arrays.asList(nums[first], nums[second], nums[last]));
+
 🐱Point
 1.sort
 2.important to carefully set the pointer range
