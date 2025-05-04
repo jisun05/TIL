@@ -1,0 +1,24 @@
+📌 Problem Name
+141. Linked List Cycle (https://leetcode.com/problems/linked-list-cycle/)
+
+🗂 Category / Type
+Two Pointers / Floyd’s Tortoise and Hare
+
+🔍 My Initial Approach
+I experimented with modifying next pointers to mark visited nodes.
+
+❌What Went Wrong / Why It Failed
+Moving both pointers equally never changed their separation inside the cycle, so they just “chased” each other without meeting.
+Altering next pointers broke the list structure and risked losing the original links.
+
+
+✅ Final Solution Summary
+Use two pointers
+This leverages the fact that in a cycle, the fast pointer gains one node per iteration on the slow pointer, guaranteeing they’ll collide.
+
+🧠 Key Takeaways / What I Learned
+Always create a speed difference (2 vs. 1) so pointers converge inside a cycle.
+Pre-check fast and fast.next for null before a two-step advance to avoid exceptions.
+Starting fast one node ahead of slow avoids a false positive at the very beginning.
+This approach runs in O(n) time and uses O(1) extra space.
+
