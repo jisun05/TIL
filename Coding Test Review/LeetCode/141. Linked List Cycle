@@ -22,3 +22,6 @@ Pre-check fast and fast.next for null before a two-step advance to avoid excepti
 Starting fast one node ahead of slow avoids a false positive at the very beginning.
 This approach runs in O(n) time and uses O(1) extra space.
 
+**[2025-05-05 Review]**
+When using slow-and-fast pointers to detect a cycle, always include the base-case check.
+=> if (head == null || head.next == null) return false;
