@@ -1,0 +1,25 @@
+📌 Problem Name
+876. Middle of the Linked List (https://leetcode.com/problems/middle-of-the-linked-list/)
+
+🗂 Category / Type
+Two Pointers / Fast and Slow Pointer
+
+🔍 My Initial Approach
+Compute the target index as n / 2 (integer division).
+Traverse a second time to that index and return that node.
+
+❌ What Went Wrong / Why It Failed
+For even-length lists, n / 2 gives the first middle (e.g. for 6 nodes, 6/2 = 3, returning the 3rd node), but the problem requires the second middle.
+It also requires two full traversals of the list, which is still O(n) time but less elegant than a single-pass solution.
+
+✅ Final Solution Summary
+Use two pointers, slow and fast, both starting at head. In each step:
+
+slow = slow.next
+fast = fast.next.next
+Stop when fast is null or fast.next is null. At that point, slow points to the middle node (and in even-length cases, to the second middle). This runs in O(n) time with O(1) extra space.
+
+🧠 Key Takeaways / What I Learned
+A speed difference (2× vs. 1×) between pointers finds the correct middle in one pass.
+The two-pointer technique naturally handles even-length lists by selecting the second middle.
+Always guard against null pointers by checking head (and head.next) before advancing pointers.
