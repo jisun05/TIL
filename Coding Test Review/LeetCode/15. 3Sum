@@ -39,6 +39,10 @@ result.add(nums[first], nums[second], nums[last]);
 // Correct:
 result.add(Arrays.asList(nums[first], nums[second], nums[last]));
 
+**[2025-05-06 Review]**
+Make sure to handle duplicate checks properly.
+
+
 🐱Point
 1.sort
 2.important to carefully set the pointer range
