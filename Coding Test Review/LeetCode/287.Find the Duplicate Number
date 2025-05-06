@@ -1,0 +1,28 @@
+📌 Problem Name
+287.Find the Duplicate Number
+
+🗂 Category / Type
+Cycle Detection (Floyd’s Tortoise and Hare) / Two Pointers
+
+❌ What Went Wrong / Why It Failed
+Initially tried to use sorting with two pointers, which is unnecessary and less efficient.
+Misunderstood the problem as needing a brute-force or HashSet-based approach, violating the O(1) space requirement.
+Incorrectly treated values as values, not as indices — missing the core pointer-chasing structure.
+Missed the fact that the array’s structure naturally forms a cycle due to the pigeonhole principle.
+Didn't leverage Floyd's algorithm because the problem didn’t look like a cycle problem at first glance.
+
+🧠 Key Takeaways / What I Learned
+When nums.length == n + 1 and values are in [1, n], the structure guarantees a cycle.
+You can treat nums[i] as a pointer to the next index — like a linked list.
+Use Floyd’s Tortoise and Hare:
+slow = nums[slow]
+fast = nums[nums[fast]]
+The point where slow and finder meet again is the start of the cycle = duplicate number.
+This approach gives O(n) time and O(1) space — optimal for the constraints.
+
+🐱 Point
+Recognize that the problem reduces to cycle detection via pointer redirection.
+The pigeonhole principle is key: n + 1 elements in a [1, n] range must produce a duplicate.
+Don’t rely on sorting or extra memory — the structure of the input itself gives enough information.
+Floyd’s algorithm is not just for linked lists — it works on array-based pointer graphs too.
+
