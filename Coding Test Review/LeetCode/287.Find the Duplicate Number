@@ -20,6 +20,13 @@ fast = nums[nums[fast]]
 The point where slow and finder meet again is the start of the cycle = duplicate number.
 This approach gives O(n) time and O(1) space — optimal for the constraints.
 
+
+**[2025-05-07 Review]**
+Avoid sorting: Using Arrays.sort(nums) alters the input and costs O(n log n), violating the “no modification” constraint.
+Incorrect pointer setup: Reinitializing slow and fast inside the loop prevents them from advancing through the cycle.
+No true traversal: Since pointers never move consecutively, they can’t follow the underlying cycle structure.
+Broken mapping: Sorting destroys the original index-to-value relationships, so no cycle exists and the pointers will never meet.
+
 🐱 Point
 Recognize that the problem reduces to cycle detection via pointer redirection.
 The pigeonhole principle is key: n + 1 elements in a [1, n] range must produce a duplicate.
