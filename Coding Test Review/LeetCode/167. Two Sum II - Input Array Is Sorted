@@ -49,8 +49,8 @@ why the condition 'while (first < last)' ?
 The loop continues as long as two pointers haven't crossed each other. Once first is no longer less than last, all posiible pairs have been checked,
 and there's no need to continue.
 
-
-
+**[2025-05-08 Review]**
+The check for numbers.length == 0 is unnecessary because the while (first < last) condition will naturally fail and exit the loop when the array is empty.
 
 
 
