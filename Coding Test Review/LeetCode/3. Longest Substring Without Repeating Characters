@@ -1,0 +1,19 @@
+📌 **Problem Name**
+3. Longest Substring Without Repeating Characters
+
+🗂 **Category / Type**
+Sliding Window / HashSet / Two Pointers
+
+❌ **What Went Wrong / Why It Failed**
+Initially tried to brute-force all substrings, which resulted in time limit exceeded. Didn’t consider how sliding window + set can help reduce time complexity from O(n²) to O(n).
+
+🧠 **Key Takeaways / What I Learned**
+* The sliding window technique is powerful when tracking continuous segments with constraints.
+* Use a `Set` to efficiently track seen characters and detect duplicates in O(1).
+* Move the `left` pointer only as much as needed — don’t reset it completely.
+
+🐱 **Point**
+1. Use `Set<Character>` to track characters in the current window.
+2. Move `left` pointer forward only when a duplicate is found.
+3. Always update `maxLength` with `right - left + 1` whenever the window is valid.
+4. Efficient and clean logic makes this approach suitable even for large inputs.
