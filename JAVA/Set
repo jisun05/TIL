@@ -2,13 +2,13 @@
 No duplicates allowed
 No guaranteed ordering (specific order depends on the implementation)
 
-Key methods:
+#Key methods:
 boolean add(E e)
 boolean remove(Object o)
 boolean contains(Object o)
 int size()
 
-Main Implementations
+#Main Implementations
 Class	Characteristics	Time Complexity (avg)
 HashSet :	Backed by a hash table; no ordering; allows null	add / contains: O(1)
 LinkedHashSet : 	Maintains insertion order	add / contains: O(1)
@@ -18,10 +18,69 @@ TreeSet : 	Keeps elements sorted (ascending), backed by a BST	add / contains: O(
 Underlying structure: uses a HashMap<E, Object> internally.
 On add(e):
 Compute e.hashCode() to determine a bucket index
-
 If that bucket is empty, insert a new node
 If not, compare with existing entries using equals()
 If a match is found, do not insert (prevents duplicates)
 Otherwise, chain the new node in that bucket
 
 Average time complexity for add, contains, and remove: O(1) due to direct index computation via hashing.
+
+
+################Questions?###############
+
+1. Difference between HashSet and HashMap
+
+#Underlying structure
+HashSet is backed by a HashMap<E,Object> internally.
+It stores only the keys (the set elements) and uses a single shared dummy value for all entries.
+
+#API focus
+HashSet implements the Set interface (no key–value pairs, only unique elements).
+HashMap implements the Map interface (stores distinct key–value pairs).
+
+2. When to use TreeSet vs. HashSet
+
+#TreeSet
+Maintains its elements in sorted (ascending) order.
+Use when you need to iterate in order or perform range queries (e.g. subSet, headSet).
+
+#HashSet
+No guaranteed order.
+Backed by a hash table (HashMap), so average operations are O(1).
+Use when you only need fast insertion, deletion, and membership tests without caring about order.
+
+3. What is load factor and why adjust it?
+
+#Definition
+Load factor = size ÷ capacity, i.e. the ratio of stored entries to the number of buckets.
+
+#Impact
+A higher load factor means more entries per bucket ⇒ more collisions ⇒ slower operations.
+A lower load factor uses more memory (more buckets, less packed).
+
+#Adjustment trade-off
+Tuning the load factor lets you balance memory usage vs. performance (collision frequency).
+Java’s default is 0.75: it resizes when 75% full to keep operations fast without wasting too much space.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
