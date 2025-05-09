@@ -1,0 +1,27 @@
+1. Overview of the Set Interface
+No duplicates allowed
+No guaranteed ordering (specific order depends on the implementation)
+
+Key methods:
+boolean add(E e)
+boolean remove(Object o)
+boolean contains(Object o)
+int size()
+
+Main Implementations
+Class	Characteristics	Time Complexity (avg)
+HashSet :	Backed by a hash table; no ordering; allows null	add / contains: O(1)
+LinkedHashSet : 	Maintains insertion order	add / contains: O(1)
+TreeSet : 	Keeps elements sorted (ascending), backed by a BST	add / contains: O(log n)
+
+2.How HashSet Works Internally
+Underlying structure: uses a HashMap<E, Object> internally.
+On add(e):
+Compute e.hashCode() to determine a bucket index
+
+If that bucket is empty, insert a new node
+If not, compare with existing entries using equals()
+If a match is found, do not insert (prevents duplicates)
+Otherwise, chain the new node in that bucket
+
+Average time complexity for add, contains, and remove: O(1) due to direct index computation via hashing.
