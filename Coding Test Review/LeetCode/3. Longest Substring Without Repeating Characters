@@ -12,6 +12,11 @@ Initially tried to brute-force all substrings, which resulted in time limit exce
 * Use a `Set` to efficiently track seen characters and detect duplicates in O(1).
 * Move the `left` pointer only as much as needed — don’t reset it completely.
 
+***01/05/2025 Review***
+When you see a duplicate at right, shrink the window from left—removing one char at a time—until the duplicate is expelled.
+
+
+
 🐱 **Point**
 1. Use `Set<Character>` to track characters in the current window.
 2. Move `left` pointer forward only when a duplicate is found.
