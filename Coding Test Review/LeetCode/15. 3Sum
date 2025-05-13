@@ -39,9 +39,15 @@ result.add(nums[first], nums[second], nums[last]);
 // Correct:
 result.add(Arrays.asList(nums[first], nums[second], nums[last]));
 
-**[2025-05-06 Review]**
+**[06 May 2025 Review]**
 Make sure to handle duplicate checks properly.
 
+**[13 May 2025 Review]**
+Make sure to maintain type safety.
+List<List<Integer>> result = new ArrayList<>();   (good)
+List<List<Integer>> result = new ArrayList();   (bad)
+
+If you remove duplicates before checking sum == 0, you risk skipping combinations that could be valid answers.
 
 🐱Point
 1.sort
