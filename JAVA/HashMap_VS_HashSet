@@ -1,0 +1,19 @@
+✅ Key Differences Between `HashMap` and `HashSet` in Java
+
+| Feature                | `HashMap<K, V>`                              | `HashSet<E>`                                       |
+|------------------------|----------------------------------------------|----------------------------------------------------|
+| **Storage Structure**  | Stores key-value pairs                       | Stores only values                                 |
+| **Primary Purpose**    | Fast lookup of values by key                 | Maintain a collection of unique values             |
+| **Internal Implementation** | Native `HashMap`                        | Internally uses `HashMap<E, Object>`               |
+| **Duplicates Allowed** | Keys must be unique; values can be duplicated | No duplicates allowed at all                      |
+| **Value Access**       | Access via `map.get(key)`                    | Use loop or `contains()` method                    |
+| **Common Methods**     | `put()`, `get()`, `remove()`                 | `add()`, `contains()`, `remove()`                  |
+
+
+
+
+
+ℹ️ `HashSet` is backed by a `HashMap` internally. Each element in the set is stored as a key in the map, with a constant dummy object as the value. This allows `HashSet` to leverage the fast lookup properties of `HashMap`.
+
+
+
