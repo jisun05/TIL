@@ -1,0 +1,124 @@
+import java.util.*;
+
+public class BigOExamples {
+
+    //O(1) – Constant Time
+    /*
+     * Checks only the first element of the array.
+     * Time complexity is always O(1), regardless of array size.
+     * Limited functionality: Does not check the whole array.
+     */
+    public static boolean containsConstant(int[] arr, int target) {
+        if (arr.length == 0) return false;
+        return arr[0] == target;
+    }
+
+    //O(log n) – Binary Search
+    /*
+     * Binary search assumes the array is already sorted.
+     * Each iteration cuts the search space in half.
+     * Time complexity: O(log n).
+     * Fast search, but array must be sorted.
+     */
+    public static boolean containsBinarySearch(int[] sortedArr, int target) {
+        int lo = 0, hi = sortedArr.length - 1;
+        while (lo <= hi) {
+            int mid = lo + (hi - lo) / 2;
+            if (sortedArr[mid] == target) return true;
+            else if (sortedArr[mid] < target) lo = mid + 1;
+            else hi = mid - 1;
+        }
+        return false;
+    }
+
+    //O(n) – Linear Search
+    /*
+     * Scans each element one by one.
+     * Worst-case: Target is not found or at the end → O(n).
+     * Best-case: Target is the first element → O(1).
+     * Average-case: Considered O(n).
+     */
+    public static boolean containsLinear(int[] arr, int target) {
+        for (int x : arr) {
+            if (x == target) return true;
+        }
+        return false;
+    }
+
+    //O(n log n) – Sort + Binary Search
+    /*
+     * Sort the array first (O(n log n)), then binary search (O(log n)).
+     * Overall time complexity is O(n log n).
+     * Useful when the array is not sorted.
+     * Be aware: Sorting changes the array order.
+     */
+    public static boolean containsSortThenSearch(int[] arr, int target) {
+        Arrays.sort(arr);            // O(n log n)
+        return Arrays.binarySearch(arr, target) >= 0;  // O(log n)
+    }
+
+    //O(n²) – Brute-Force Duplicate Check
+    /*
+     * Compares all possible pairs to find duplicates.
+     * Worst-case: O(n²) when no duplicates or last elements.
+     * Best-case: O(1) if a duplicate is found early.
+     * Not efficient for large arrays.
+     */
+    public static boolean hasDuplicateBrute(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] == arr[j]) return true;
+            }
+        }
+        return false;
+    }
+
+    //O(2^n) – Generate All Subsets
+    /*
+     * Generates all possible subsets of a list.
+     * Each element has two choices: include or exclude → 2^n subsets.
+     * Each subset may take up to O(n) time to copy.
+     * Total time complexity: O(n × 2^n).
+     * Exponential growth: Be careful with large n!
+     */
+    public static List<List<Integer>> generateSubsets(List<Integer> set) {
+        List<List<Integer>> result = new ArrayList<>();
+        backtrack(set, 0, new ArrayList<>(), result);
+        return result;
+    }
+
+    /*
+     * Backtracking helper for generating subsets.
+     * Recursively includes/excludes each element.
+     */
+    private static void backtrack(List<Integer> set, int idx,
+                                  List<Integer> curr, List<List<Integer>> result) {
+        if (idx == set.size()) {
+            result.add(new ArrayList<>(curr));
+            return;
+        }
+        // Exclude the current element
+        backtrack(set, idx + 1, curr, result);
+        // Include the current element
+        curr.add(set.get(idx));
+        backtrack(set, idx + 1, curr, result);
+        curr.remove(curr.size() - 1);
+    }
+
+    // --- Main for testing ---
+    public static void main(String[] args) {
+        int[] arr = {5, 3, 8, 1, 4};
+        int target = 3;
+
+        System.out.println("O(1): " + containsConstant(arr, target));
+        Arrays.sort(arr);  // Sort for binary search
+        System.out.println("O(log n): " + containsBinarySearch(arr, target));
+        System.out.println("O(n): " + containsLinear(arr, target));
+        System.out.println("O(n log n): " + containsSortThenSearch(arr, target));
+        System.out.println("O(n^2) duplicate check: " + hasDuplicateBrute(arr));
+
+        List<Integer> set = Arrays.asList(5, 3, 8);
+        List<List<Integer>> subs = generateSubsets(set);
+        System.out.println("O(2^n) number of subsets: " + subs.size());
+    }
+}
